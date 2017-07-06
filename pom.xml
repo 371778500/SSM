@@ -30,6 +30,11 @@
       <scope>test</scope>
     </dependency>
     
+    <dependency>
+	 <groupId>org.quartz-scheduler</groupId>
+	 <artifactId>quartz</artifactId>
+	 <version>1.8.4</version>
+	</dependency>
     
     <!-- spring核心包 -->  
      <dependency>  
