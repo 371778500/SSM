@@ -76,44 +76,5 @@
     </bean> 
     <!-- 启用事务管理 -->
     <tx:annotation-driven transaction-manager="transactionManager" />
-    
-    
-    
-    <!-- 使用quartz -->
-    <bean id="executor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
-	 <property name="corePoolSize" value="10" />
-	 <property name="maxPoolSize" value="100" />
-	 <property name="queueCapacity" value="500" />
-	</bean>
-	<!-- 业务对象  用户自己定义的执行任务类 -->
-    <bean id="bizObject" class="test.ExpireJobTask" />
-    <!-- 调度业务 -->
-	<bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-	 <property name="targetObject" ref="bizObject" />
-	 <property name="targetMethod" value="doBiz" />
-	</bean>
-	<!-- 增加调度触发器 -->
-   <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
-	 <property name="jobDetail" ref="jobDetail" />
-	 <property name="cronExpression" value="0/10 * * * * ?" />
-	</bean>
-	<!-- Cron表达式“10 */1 * * * ?”意为：从0秒开始，每10秒执行一次。 -->
-	<!-- <bean id="taskTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
-	 <property name="jobDetail" ref="jobDetail" />
-	 <property name="startDelay" value="10000" />
-	 <property name="repeatInterval" value="60000" />
-	</bean> -->
-
-	<!-- 设置调度 -->
-	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-	 <property name="triggers">
-	  <list>
-	   <ref bean="cronTrigger" />
-	  </list>
-	 </property>
-	 <property name="taskExecutor" ref="executor" />
-	</bean>
-    
-    
-  
+   
 </beans>  

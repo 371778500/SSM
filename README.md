@@ -1,5 +1,13 @@
-# SSM
+# SSM+quartz
 
 基于spring springMVC mybatis 搭建的项目示例
 添加任务调度quartz功能示例
-后期将添加redis,shiro等实现基本增删改查功能
+
+测试quartz 任务的启动，暂停，恢复，删除，重置
+可以在启动服务时访问如下链接查看工作台日子：
+启动：http://localhost:8082/SSM/quartz/start1
+启动：http://localhost:8082/SSM/quartz/start2
+暂停：http://localhost:8082/SSM/quartz/stop
+恢复：http://localhost:8082/SSM/quartz/upstop
+删除：http://localhost:8082/SSM/quartz/del
+重置：http://localhost:8082/SSM/quartz/uodate
