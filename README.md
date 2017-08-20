@@ -1,13 +1,14 @@
 # SSM+quartz
 
-»ùÓÚspring springMVC mybatis ´î½¨µÄÏîÄ¿Ê¾Àı
-Ìí¼ÓÈÎÎñµ÷¶Èquartz¹¦ÄÜÊ¾Àı
+åŸºäºspring springMVC mybatis æ­å»ºçš„é¡¹ç›®ç¤ºä¾‹
+æ·»åŠ ä»»åŠ¡è°ƒåº¦quartzåŠŸèƒ½ç¤ºä¾‹
 
-²âÊÔquartz ÈÎÎñµÄÆô¶¯£¬ÔİÍ££¬»Ö¸´£¬É¾³ı£¬ÖØÖÃ
-¿ÉÒÔÔÚÆô¶¯·şÎñÊ±·ÃÎÊÈçÏÂÁ´½Ó²é¿´¹¤×÷Ì¨ÈÕ×Ó£º
-Æô¶¯£ºhttp://localhost:8082/SSM/quartz/start1
-Æô¶¯£ºhttp://localhost:8082/SSM/quartz/start2
-ÔİÍ££ºhttp://localhost:8082/SSM/quartz/stop
-»Ö¸´£ºhttp://localhost:8082/SSM/quartz/upstop
-É¾³ı£ºhttp://localhost:8082/SSM/quartz/del
-ÖØÖÃ£ºhttp://localhost:8082/SSM/quartz/uodate
+æµ‹è¯•quartz ä»»åŠ¡çš„å¯åŠ¨ï¼Œæš‚åœï¼Œæ¢å¤ï¼Œåˆ é™¤ï¼Œé‡ç½®
+å¯ä»¥åœ¨å¯åŠ¨æœåŠ¡æ—¶è®¿é—®å¦‚ä¸‹é“¾æ¥æŸ¥çœ‹å·¥ä½œå°æ—¥å­ï¼š
+
+å¯åŠ¨ï¼šhttp://localhost:8082/SSM/quartz/start1
+å¯åŠ¨ï¼šhttp://localhost:8082/SSM/quartz/start2
+æš‚åœï¼šhttp://localhost:8082/SSM/quartz/stop
+æ¢å¤ï¼šhttp://localhost:8082/SSM/quartz/upstop
+åˆ é™¤ï¼šhttp://localhost:8082/SSM/quartz/del
+é‡ç½®ï¼šhttp://localhost:8082/SSM/quartz/uodate
