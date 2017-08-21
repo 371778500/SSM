@@ -17,7 +17,7 @@ public class Monitor implements Runnable {
 
     public void sendMsg() {
         ScheduledExecutorService newScheduledThreadPool = Executors.newSingleThreadScheduledExecutor();
-        newScheduledThreadPool.scheduleWithFixedDelay(new Monitor(), 20, 5, TimeUnit.SECONDS);
+        newScheduledThreadPool.scheduleWithFixedDelay(new Monitor(), 0, 5, TimeUnit.SECONDS);
 
     }
 }
