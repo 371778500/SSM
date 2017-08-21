@@ -1,4 +1,4 @@
-package com.yonyou.web.test;
+package com.yonyou.web;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.yonyou.entity.test.Persion;
-import com.yonyou.service.test.TestPersionService;
+import com.yonyou.entity.Persion;
+import com.yonyou.service.TestPersionService;
 
 @Controller
 @RequestMapping(value = "/test")

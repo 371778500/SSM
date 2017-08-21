@@ -10,19 +10,19 @@
 
 
 	<!-- quartz-->
-	<bean id="scheduler"
+	<!-- <bean id="scheduler"
 		class="org.springframework.scheduling.quartz.SchedulerFactoryBean" scope="singleton">
 		<property name="jobFactory">
 			<bean class="com.yonyou.quartz.test.JobBeanJobFactory" />
 		</property>
 		<property name="schedulerName" value="scheduler" />
-		<!-- <property name="configLocation" value="classpath:quartz.properties" /> -->
-	</bean>
+		<property name="configLocation" value="classpath:quartz.properties" />
+	</bean> 
 
 	<bean id="quartzManager" class="com.yonyou.quartz.test.QuartzManager"
 		lazy-init="false" scope="singleton">
 		<property name="scheduler" ref="scheduler"></property>
-	</bean> 
+	</bean> -->
 
 
 
