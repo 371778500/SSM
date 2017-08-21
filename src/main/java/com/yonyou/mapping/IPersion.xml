@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yonyou.repository.test.IPersion" >
-  <resultMap id="BaseResultMap" type="com.yonyou.entity.test.Persion" >
+<mapper namespace="com.yonyou.repository.IPersion" >
+  <resultMap id="BaseResultMap" type="com.yonyou.entity.Persion" >
     <result column="id" property="id" jdbcType="INTEGER" />
     <result column="CN" property="cn" jdbcType="VARCHAR" />
     <result column="EN" property="en" jdbcType="VARCHAR" />
     <result column="age" property="age" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="com.yonyou.entity.test.Persion" >
+  <insert id="insert" parameterType="com.yonyou.entity.Persion" >
     insert into persion (id, CN, EN, age
       )
     values (#{id,jdbcType=INTEGER}, #{cn,jdbcType=VARCHAR}, #{en,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.yonyou.entity.test.Persion" >
+  <insert id="insertSelective" parameterType="com.yonyou.entity.Persion" >
     insert into persion
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
