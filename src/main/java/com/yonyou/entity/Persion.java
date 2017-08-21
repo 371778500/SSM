@@ -1,4 +1,4 @@
-package com.yonyou.entity.test;
+package com.yonyou.entity;
 
 import java.util.Date;
 

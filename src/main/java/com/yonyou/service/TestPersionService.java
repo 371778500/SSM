@@ -1,11 +1,11 @@
-package com.yonyou.service.test;
+package com.yonyou.service;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.yonyou.entity.test.Persion;
-import com.yonyou.repository.test.IPersion;
+import com.yonyou.entity.Persion;
+import com.yonyou.repository.IPersion;
 
 @Service
 public class TestPersionService {

@@ -1,8 +1,8 @@
-package com.yonyou.repository.test;
+package com.yonyou.repository;
 
 import org.springframework.stereotype.Repository;
 
-import com.yonyou.entity.test.Persion;
+import com.yonyou.entity.Persion;
 
 @Repository
 public interface IPersion {
