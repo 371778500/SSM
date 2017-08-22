@@ -1,6 +1,4 @@
-﻿//调用示例
-//var socket = new Socket("ws://localhost:8080/RealTimeChat/webSocketServer.do",messageHandle);
-function diao(url,callback) {
+﻿function diao(url,callback) {
     
 	var socket = new WebSocket(url);
 
