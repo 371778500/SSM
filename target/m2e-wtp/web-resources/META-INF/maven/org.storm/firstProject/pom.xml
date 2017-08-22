@@ -227,7 +227,6 @@
 	   <artifactId>spring-messaging</artifactId>
 	   <version>4.0.1.RELEASE</version>
 	</dependency>
-    
   </dependencies>
   <build>
     <finalName>firstProject</finalName>

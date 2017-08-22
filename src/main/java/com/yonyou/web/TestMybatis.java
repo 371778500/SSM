@@ -34,5 +34,10 @@ public class TestMybatis {
 		System.out.println(testservice.insertPersion(p));
 		return p;
 	}
+	
+	@RequestMapping(value = "websocket", method = RequestMethod.GET)
+	public String pageSkip() {
+		return "page/websocket/chat";
+	}
 
 }
