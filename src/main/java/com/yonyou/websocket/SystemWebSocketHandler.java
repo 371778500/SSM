@@ -2,11 +2,16 @@ package com.yonyou.websocket;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
-import net.sf.json.JSONObject;
+//import net.sf.json.JSONObject;
+
 
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -14,37 +19,40 @@ import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.WebSocketMessage;
 import org.springframework.web.socket.WebSocketSession;
 
+import com.alibaba.fastjson.JSONObject;
+import com.yonyou.util.DateTimeUtil;
+
 
 public class SystemWebSocketHandler implements WebSocketHandler {
+	ScheduledExecutorService service=null;
 
-	private static ArrayList<WebSocketSession> users = new ArrayList<WebSocketSession>();
+	//存放websocket连接信息
+	private static ArrayList<WebSocketSession> linkUsers = new ArrayList<WebSocketSession>();
+	//存放用户信息
 	private Map<String, String> userMaps = new HashMap<String, String>();
-
-	// private ArrayList<HashMap> userMaps = new ArrayList<HashMap>();
 
 	//连接websocket成功后调用该方法
 	public void afterConnectionEstablished(WebSocketSession session)
 			throws Exception {
 		System.out.println("ConnectionEstablished");
-		String i = session.getId();
-		System.out.println(i + " user size:" + users.size());
-		users.add(session);
+		String id = session.getId();
+		linkUsers.add(session);
+		System.out.println(id + " 当期连接的用户数量:" + linkUsers.size());
 	}
 
 	//监听前台有消息发送过来就会触发该方法
-	public void handleMessage(WebSocketSession session,
-			WebSocketMessage<?> message) throws Exception {
-		String schatMessage = (String) message.getPayload();
-		System.out.println(schatMessage);
-		JSONObject jsonObject = JSONObject.fromObject(schatMessage);
-		ChatMessage bean = (ChatMessage) JSONObject.toBean(jsonObject,
-				ChatMessage.class);
-		String type = bean.getType();
-		if (type.equals("0")) {
-			userMaps.put(session.getId(), bean.getUsername());
-			sendtoAllOnlineUsers();
-		} else if (type.equals("1")) {
-			sendMessageToUsers(message);
+	public void handleMessage(WebSocketSession session,WebSocketMessage<?> message) throws Exception {
+		String socketInfo = (String) message.getPayload();
+		System.out.println(socketInfo);
+		JSONObject jsonObject =JSONObject.parseObject(socketInfo);
+		String type = jsonObject.getString("type");
+		if (type.equals("start")) {
+			userMaps.put(session.getId(), jsonObject.getString("username"));
+			skipSendMessageToUser(0);
+		} else if (type.equals("gointo")) {
+			skipSendMessageToUser(Integer.parseInt(jsonObject.getString("time")));
+		}else if (type.equals("goouto")) {
+			skipSendMessageToUser(Integer.parseInt(jsonObject.getString("time")));
 		}
 	}
 
@@ -70,13 +78,15 @@ public class SystemWebSocketHandler implements WebSocketHandler {
 
 	//WebSocketSession.sendMessage(message); 为后台发送消息，会触发前台监听消息的方法
 	
+	
 	/**
-	 * 给所有在线用户发送消息
+	 * 给所有在线用户发送消息,及连接上服务器上的websocket
 	 * 
 	 * @param message
 	 */
-	private void sendMessageToUsers(WebSocketMessage<?> message) {
-		for (WebSocketSession user : users) {
+	private void sendtoAllOnlineUsers(WebSocketMessage<?> message) {
+		
+		for (WebSocketSession user : linkUsers) {
 			try {
 				if (user.isOpen()) {
 					user.sendMessage(message);
@@ -84,53 +94,31 @@ public class SystemWebSocketHandler implements WebSocketHandler {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
-	}
-
-	private void sendtoAllOnlineUsers() {
-		OnlineStudents onlines = new OnlineStudents();
-		ArrayList<String> username = new ArrayList<String>();
-		for (Map.Entry<String, String> u : userMaps.entrySet()) {
-			username.add(u.getValue());
-		}
-		onlines.setType("3");
-		onlines.setUsernames(username);
-		JSONObject jsonObject = JSONObject.fromObject(onlines);
-		String text = jsonObject.toString();
-		text = text.replace("\"3\"", "3");
-		System.out.println(text);
-		for (WebSocketSession user : users) {
-			try {
-				if (user.isOpen()) {
-					user.sendMessage(new TextMessage(text));
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		} 
 	}
 
 	/**
-	 * 发送当时所有的在线用户
+	 * 定时发送消息给用户
 	 */
-	private void sendOnlineUsers(WebSocketSession session) {
-		OnlineStudents onlines = new OnlineStudents();
-		ArrayList<String> username = new ArrayList<String>();
-		for (Map.Entry<String, String> u : userMaps.entrySet()) {
-			username.add(u.getValue());
+	private void skipSendMessageToUser(final int value){
+		if(service!=null){
+			service.shutdownNow();
 		}
-		onlines.setType("3");
-		onlines.setUsernames(username);
-		JSONObject jsonObject = JSONObject.fromObject(onlines);
-		String text = jsonObject.toString();
-		text = text.replace("\"3\"", "3");
-		System.out.println(text);
-		try {
-			session.sendMessage(new TextMessage(text));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		Runnable runnable = new Runnable() {  
+            public void run() {  
+            	Date date=DateTimeUtil.getDate(new Date(),value,5);
+            	String str=DateTimeUtil.shortFmt3(date);
+            	JSONObject json=new JSONObject();
+            	json.put("time", str);
+            	sendtoAllOnlineUsers(new TextMessage(json.toString()));
+            }  
+        };  
+        service = Executors.newSingleThreadScheduledExecutor(); 
+        // 第二个参数为首次执行的延时时间，第三个参数为定时执行的间隔时间  
+        service.scheduleAtFixedRate(runnable, 0, 1, TimeUnit.SECONDS); 
+        
 	}
+	
 
 	/**
 	 * 断开连接时移除用户
@@ -138,8 +126,7 @@ public class SystemWebSocketHandler implements WebSocketHandler {
 	 * @param session
 	 */
 	private void removeUser(WebSocketSession session) {
-		users.remove(session);
+		linkUsers.remove(session);
 		userMaps.remove(session.getId());
-		sendtoAllOnlineUsers();
 	}
 }
