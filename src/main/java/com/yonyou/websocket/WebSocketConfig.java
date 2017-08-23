@@ -18,7 +18,7 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 public class WebSocketConfig extends WebMvcConfigurerAdapter implements WebSocketConfigurer{
 
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-		 registry.addHandler(systemWebSocketHandler(),"webSocketServer.do");
+		 registry.addHandler(systemWebSocketHandler(),"webSocketServer");
 	}
 	
 	@Bean
