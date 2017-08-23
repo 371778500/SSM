@@ -1,4 +1,4 @@
-# SSM+quartz
+# SSM+quartz+websocket
 
 基于spring springMVC mybatis 搭建的项目示例
 添加任务调度quartz功能示例
