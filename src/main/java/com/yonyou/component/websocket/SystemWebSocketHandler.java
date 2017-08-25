@@ -1,4 +1,4 @@
-package com.yonyou.websocket;
+package com.yonyou.component.websocket;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 //import net.sf.json.JSONObject;
 
 
+
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketHandler;
@@ -20,7 +21,7 @@ import org.springframework.web.socket.WebSocketMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 import com.alibaba.fastjson.JSONObject;
-import com.yonyou.util.DateTimeUtil;
+import com.yonyou.component.util.DateTimeUtil;
 
 
 public class SystemWebSocketHandler implements WebSocketHandler {

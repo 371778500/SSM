@@ -1,4 +1,4 @@
-package com.yonyou.util;
+package com.yonyou.component.util;
 
 import java.util.Calendar;
 import java.util.Date;
