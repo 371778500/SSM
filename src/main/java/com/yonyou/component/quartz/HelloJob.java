@@ -1,4 +1,4 @@
-package com.yonyou.quartz;
+package com.yonyou.component.quartz;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.yonyou.websocket;
+package com.yonyou.component.websocket;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

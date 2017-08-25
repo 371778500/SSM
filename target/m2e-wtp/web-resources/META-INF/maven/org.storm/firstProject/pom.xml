@@ -111,7 +111,7 @@
          <artifactId>mybatis-spring</artifactId>  
          <version>1.2.2</version>  
      </dependency>  
-     <!-- 导入java ee jar 包 -->  
+     <!-- 导入java ee jar 会影响websocket，所以注释 -->  
      <!-- <dependency>  
          <groupId>javax</groupId>  
          <artifactId>javaee-api</artifactId>  
@@ -227,6 +227,25 @@
 	   <artifactId>spring-messaging</artifactId>
 	   <version>4.0.1.RELEASE</version>
 	</dependency>
+	
+	<!-- 下面是开发webservice使用的jar包 -->
+	<dependency>
+	    <groupId>asm</groupId>
+	    <artifactId>asm</artifactId>
+	    <version>3.3.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.cxf</groupId>
+	    <artifactId>cxf-rt-frontend-jaxws</artifactId>
+	    <version>2.5.9</version>
+	</dependency>
+	<dependency>
+    <groupId>org.apache.geronimo.specs</groupId>
+	    <artifactId>geronimo-servlet_3.0_spec</artifactId>
+	    <version>1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	
   </dependencies>
   <build>
     <finalName>firstProject</finalName>
