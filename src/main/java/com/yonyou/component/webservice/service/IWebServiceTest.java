@@ -2,6 +2,8 @@ package com.yonyou.component.webservice.service;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+
+import com.yonyou.component.webservice.service.UserBean;
 /**
  * 定义一个webservice接口
  * @author luochp3
@@ -11,5 +13,5 @@ import javax.jws.WebService;
 @WebService
 public interface IWebServiceTest {
 	@WebMethod 
-	public UserBean GetInfo(String str);
+	public UserBean getInfo(String str);
 }
