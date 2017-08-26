@@ -240,10 +240,55 @@
 	    <version>2.5.9</version>
 	</dependency>
 	<dependency>
-    <groupId>org.apache.geronimo.specs</groupId>
+    	<groupId>org.apache.geronimo.specs</groupId>
 	    <artifactId>geronimo-servlet_3.0_spec</artifactId>
 	    <version>1.0</version>
 	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.eclipse.jetty</groupId>
+	    <artifactId>jetty-continuation</artifactId>
+	    <version>7.5.4.v20111024</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.eclipse.jetty</groupId>
+	    <artifactId>jetty-http</artifactId>
+	    <version>7.5.4.v20111024</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.eclipse.jetty</groupId>
+	    <artifactId>jetty-io</artifactId>
+	    <version>7.5.4.v20111024</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.eclipse.jetty</groupId>
+	    <artifactId>jetty-security</artifactId>
+	    <version>7.5.4.v20111024</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.eclipse.jetty</groupId>
+	    <artifactId>jetty-server</artifactId>
+	    <version>7.5.4.v20111024</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.eclipse.jetty</groupId>
+	    <artifactId>jetty-util</artifactId>
+	    <version>7.5.4.v20111024</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.neethi</groupId>
+	    <artifactId>neethi</artifactId>
+	    <version>3.0.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>wsdl4j</groupId>
+	    <artifactId>wsdl4j</artifactId>
+	    <version>1.6.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.ws.xmlschema</groupId>
+	    <artifactId>xmlschema-core</artifactId>
+	    <version>2.0.3</version>
 	</dependency>
 	
   </dependencies>

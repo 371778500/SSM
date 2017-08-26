@@ -1,0 +1,10 @@
+[INFO] [2017-08-25 20:53:31][org.apache.cxf.service.factory.ReflectionServiceFactoryBean]Creating Service {http://webservice.component.yonyou.com/}WebServiceTestImpService from class com.yonyou.component.webservice.IWebServiceTest
+[INFO] [2017-08-25 21:01:42][org.apache.cxf.service.factory.ReflectionServiceFactoryBean]Creating Service {http://webservice.component.yonyou.com/}webservicetest from class com.yonyou.component.webservice.IWebServiceTest
+[INFO] [2017-08-26 09:38:10][org.apache.cxf.service.factory.ReflectionServiceFactoryBean]Creating Service {http://webservice.component.yonyou.com/}webservicetest from class com.yonyou.component.webservice.IWebServiceTest
+[INFO] [2017-08-26 09:38:41][org.apache.cxf.service.factory.ReflectionServiceFactoryBean]Creating Service {http://webservice.component.yonyou.com/}webservicetest from class com.yonyou.component.webservice.IWebServiceTest
+[INFO] [2017-08-26 09:38:42][org.apache.cxf.endpoint.ServerImpl]Setting the server's publish address to be 127.0.0.1/test
+[INFO] [2017-08-26 09:41:09][org.apache.cxf.service.factory.ReflectionServiceFactoryBean]Creating Service {http://webservice.component.yonyou.com/}webservicetest from class com.yonyou.component.webservice.IWebServiceTest
+[INFO] [2017-08-26 09:41:10][org.apache.cxf.endpoint.ServerImpl]Setting the server's publish address to be 10.187.47.22/test
+[INFO] [2017-08-26 09:42:04][org.apache.cxf.service.factory.ReflectionServiceFactoryBean]Creating Service {http://webservice.component.yonyou.com/}webservicetest from class com.yonyou.component.webservice.IWebServiceTest
+[INFO] [2017-08-26 09:43:52][org.apache.cxf.service.factory.ReflectionServiceFactoryBean]Creating Service {http://webservice.component.yonyou.com/}webservicetest from class com.yonyou.component.webservice.IWebServiceTest
+[INFO] [2017-08-26 09:43:53][org.apache.cxf.endpoint.ServerImpl]Setting the server's publish address to be 10.187.47.22/test

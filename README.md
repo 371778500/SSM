@@ -16,3 +16,6 @@
 
 websocket 实现消息的发送
 测试路径： http://localhost:8080/SSM/test/websocket
+
+webservice 的发布
+测试地址：http://localhost:8080/SSM/ws/webservice?wsdl
