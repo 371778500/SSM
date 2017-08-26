@@ -21,5 +21,5 @@ websocket:
 测试路径： http://localhost:8080/SSM/test/websocket
 
 webservice:
-发布
+发布代码在 service包下，客户端代码在client包下，客户端代码是通过创建 web service cilent项目自动生成的
 测试地址：http://localhost:8080/SSM/ws/webservice?wsdl
