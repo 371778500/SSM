@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/yonyou/component/shiro/UsernamePasswordToken.java=UTF-8
 encoding//src/main/java/com/yonyou/component/webservice/client/IWebServiceTest.java=UTF-8
 encoding//src/main/java/com/yonyou/component/webservice/client/UserBean.java=UTF-8
 encoding//src/main/java/com/yonyou/component/webservice/client/WebServiceTestImpService.java=UTF-8
@@ -6,4 +7,5 @@ encoding//src/main/java/com/yonyou/component/webservice/client/WebServiceTestImp
 encoding//src/main/java/com/yonyou/component/webservice/client/WebServiceTestImpServiceSoapBindingStub.java=UTF-8
 encoding//src/main/resources/application.properties=UTF-8
 encoding//src/main/resources/log4j.properties=UTF-8
+encoding//src/main/webapp/WEB-INF/page/login.jsp=UTF-8
 encoding/README.md=UTF-8
