@@ -1,4 +1,4 @@
-# SSM+quartz+websocket+webservice
+# SSM+quartz+websocket+webservice+shiro
 
 SSM:
 基于spring springMVC mybatis 搭建的项目示例
@@ -23,3 +23,7 @@ websocket:
 webservice:
 发布代码在 service包下，客户端代码在client包下，客户端代码是通过创建 web service cilent项目自动生成的
 测试地址：http://localhost:8080/SSM/ws/webservice?wsdl
+
+shiro : 拦截未登录的链接资源
+测试地址：：http://localhost:8080/SSM/login
+http://localhost:8080/SSM/success
