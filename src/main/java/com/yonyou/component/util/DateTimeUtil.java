@@ -1,17 +1,14 @@
 package com.yonyou.component.util;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-
-import org.apache.commons.lang3.StringUtils;
-import org.junit.Test;
-
 import java.security.InvalidParameterException;
 import java.sql.Timestamp;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * DateTime Util.
@@ -21,7 +18,6 @@ import java.text.ParseException;
  */
 public class DateTimeUtil {
 
-	/* 时间单位类型 */
 	public static int YEAR = 0;
 	public static int MONTH = 1;
 	public static int WEEK = 2;

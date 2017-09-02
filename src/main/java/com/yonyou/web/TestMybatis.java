@@ -3,10 +3,8 @@ package com.yonyou.web;
 import java.rmi.RemoteException;
 
 import org.apache.log4j.Logger;
-import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,10 +24,6 @@ public class TestMybatis {
 	@Autowired
 	private TestPersionService testservice;
 
-	@Before
-	public void before() {
-		ac = new ClassPathXmlApplicationContext("spring-mybatis.xml");
-	}
 	
 	/**
 	 * ≤‚ ‘mybatis 
