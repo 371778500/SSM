@@ -48,6 +48,7 @@
         <property name="maxInMemorySize" value="40960" />    
     </bean> 
     
-    
+    <!-- 访问静态资源文件 -->
+	<mvc:default-servlet-handler/>
   
 </beans>  
