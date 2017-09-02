@@ -25,5 +25,5 @@ webservice:
 测试地址：http://localhost:8080/SSM/ws/webservice?wsdl
 
 shiro : 拦截未登录的链接资源
-测试地址：：http://localhost:8080/SSM/login
-http://localhost:8080/SSM/success
+测试登录地址：：http://localhost:8080/SSM/login
+测试未登录地址：http://localhost:8080/SSM/success
