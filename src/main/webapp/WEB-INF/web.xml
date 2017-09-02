@@ -10,9 +10,31 @@
         <param-value>
         	classpath:spring-mybatis.xml,
         	classpath:quartz-task.xml,
-        	classpath:webservice.xml
+        	classpath:webservice.xml,
+        	classpath:spring-shiro.xml
         </param-value>  
     </context-param>  
+    
+    
+     <!-- 配置Shiro过滤器,先让Shiro过滤系统接收到的请求 -->    
+    <!-- 通常将这段代码中的filter-mapping放在所有filter-mapping之前，以达到shiro是第一个对web请求进行拦截过滤之目的。  
+       	 这里的fileter-name(shiroFilter) 对应下面applicationContext.xml中的<bean id="shiroFilter" />   
+        DelegatingFilterProxy会自动到Spring容器中查找名字为shiroFilter的bean并把filter请求交给它处理-->    
+    <!-- 使用[/*]匹配所有请求,保证所有的可控请求都经过Shiro的过滤 -->    
+    <filter>    
+        <filter-name>shiroFilter</filter-name>    
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>    
+        <init-param>    
+            <!-- 该值缺省为false,表示生命周期由SpringApplicationContext管理,设置为true则表示由ServletContainer管理   -->  
+            <param-name>targetFilterLifecycle</param-name>    
+            <param-value>true</param-value>    
+        </init-param>    
+    </filter>    
+    <filter-mapping>    
+        <filter-name>shiroFilter</filter-name>    
+        <url-pattern>/*</url-pattern>    
+    </filter-mapping>  
+    
     <!-- 编码过滤器 -->  
     <filter>  
         <filter-name>encodingFilter</filter-name>  
@@ -36,14 +58,15 @@
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>  
     </listener>  
   
-    <!-- Spring MVC servlet -->  
+    <!-- springMvc前置总控制器，在分发其它的控制器前都要经过这个总控制器  -->  
     <servlet>  
         <servlet-name>SpringMVC</servlet-name>  
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
         <init-param>  
             <param-name>contextConfigLocation</param-name>  
             <param-value>classpath:spring-mvc.xml</param-value>  
-        </init-param>  
+        </init-param> 
+        <!-- 启动顺序 -->  
         <load-on-startup>1</load-on-startup>  
         <async-supported>true</async-supported>  
     </servlet>  
@@ -52,9 +75,6 @@
         <!-- 此处可以可以配置成*.do，对应struts的后缀习惯 -->  
         <url-pattern>/</url-pattern>  
     </servlet-mapping>  
-    <welcome-file-list>  
-        <welcome-file>/index.jsp</welcome-file>  
-    </welcome-file-list> 
     
     <!-- webservice 的相关配置 -->
     <servlet>  
@@ -66,5 +86,10 @@
     	<servlet-name>CXFServlet</servlet-name>  
     	<url-pattern>/ws/*</url-pattern>  
   	</servlet-mapping>  
+  	
+  	   
+    <!-- <welcome-file-list>  
+        <welcome-file>/WEB_INF/page/login.jsp</welcome-file>  
+    </welcome-file-list>  -->
   
 </web-app>  

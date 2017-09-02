@@ -7,12 +7,14 @@
     <result column="EN" property="en" jdbcType="VARCHAR" />
     <result column="age" property="age" jdbcType="INTEGER" />
   </resultMap>
+  
   <insert id="insert" parameterType="com.yonyou.entity.Persion" >
     insert into persion (id, CN, EN, age
       )
     values (#{id,jdbcType=INTEGER}, #{cn,jdbcType=VARCHAR}, #{en,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}
       )
   </insert>
+  
   <insert id="insertSelective" parameterType="com.yonyou.entity.Persion" >
     insert into persion
     <trim prefix="(" suffix=")" suffixOverrides="," >
