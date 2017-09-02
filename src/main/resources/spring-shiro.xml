@@ -84,7 +84,7 @@
                 /logout=anon  
                 /getVerifyCodeImage=anon
                 /test/**=authc  
-                /login/success=authc  
+                /success=authc  
                 /admin/channel/** = authc,perms[admin:channel]  
                 /admin/content/** = authc,perms[admin:content]  
                 /admin/sys/** = authc,perms[admin:sys]  

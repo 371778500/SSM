@@ -88,8 +88,8 @@
   	</servlet-mapping>  
   	
   	   
-    <welcome-file-list>  
-        <welcome-file>/index.jsp</welcome-file>  
-    </welcome-file-list> 
+    <!-- <welcome-file-list>  
+        <welcome-file>/WEB_INF/page/login.jsp</welcome-file>  
+    </welcome-file-list>  -->
   
 </web-app>  
