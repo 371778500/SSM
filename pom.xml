@@ -18,6 +18,9 @@
         <slf4j.version>1.7.7</slf4j.version>  
         <log4j.version>1.2.17</log4j.version>  
         <commons-lang3.version>3.3.2</commons-lang3.version>
+        <warPackageName>SSM</warPackageName>
+        <tomcat.deploy.server>tomcat</tomcat.deploy.server>
+        <tomcat.deploy.serverUrl>http://localhost:8080/manager/text</tomcat.deploy.serverUrl>
     </properties> 
   
   <!-- 引入jar包 --> 
@@ -332,6 +335,18 @@
 	
   </dependencies>
   <build>
-    <finalName>firstProject</finalName>
+    <finalName>${warPackageName}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <server>${tomcat.deploy.server}</server>
+                    <url>${tomcat.deploy.serverUrl}</url>
+                    <path>/${warPackageName}</path>
+                </configuration>
+            </plugin>
+        </plugins>
   </build>
 </project>
