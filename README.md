@@ -27,3 +27,5 @@ webservice:
 shiro : 拦截未登录的链接资源
 测试登录地址：：http://localhost:8080/SSM/login
 测试未登录地址：http://localhost:8080/SSM/success
+
+redis : 测试代码在测试模块中

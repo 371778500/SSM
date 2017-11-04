@@ -179,6 +179,11 @@
          <artifactId>jackson-mapper-asl</artifactId>  
          <version>1.9.13</version>  
      </dependency> 
+     <dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+	    <version>1.2.8</version>
+	</dependency>
       
      <!-- 上传组件包 -->  
      <dependency>  

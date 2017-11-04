@@ -81,5 +81,25 @@
     </bean> 
     <!-- 启用事务管理 -->
     <tx:annotation-driven transaction-manager="transactionManager" />
+    
+    
+    <!-- 加载redis配置文件 -->
+	<context:property-placeholder location="classpath:redis.properties" />
+
+	<bean id="jedisConnectionFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" />
+
+	<!-- redis操作模板 -->
+	<bean id="jedisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="jedisConnectionFactory" />
+		<property name="keySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
+		<property name="valueSerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+		</property>
+	</bean>
    
 </beans>  
