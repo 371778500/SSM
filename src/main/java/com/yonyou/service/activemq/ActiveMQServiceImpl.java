@@ -6,7 +6,11 @@ import javax.jms.Session;
 
 import org.springframework.jms.core.JmsOperations;
 import org.springframework.jms.core.MessageCreator;
-
+/**
+ * 消息发送
+ * @author luochp3
+ *
+ */
 public class ActiveMQServiceImpl implements IActiveMQService {
 	
 	//注入jms模板

@@ -3,6 +3,12 @@ package com.yonyou.service.activemq;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 消息发送测试使用
+ * @author luochp3
+ *
+ */
+
 @Service
 public class MQService {
 
