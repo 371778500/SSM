@@ -11,7 +11,8 @@
         	classpath:spring-mybatis.xml,
         	classpath:quartz-task.xml,
         	classpath:webservice.xml,
-        	classpath:spring-shiro.xml
+        	classpath:spring-shiro.xml,
+        	classpath:spring-activemq.xml
         </param-value>  
     </context-param>  
     

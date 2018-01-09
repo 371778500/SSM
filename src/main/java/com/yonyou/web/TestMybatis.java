@@ -14,6 +14,7 @@ import com.yonyou.component.webservice.client.IWebServiceTestProxy;
 import com.yonyou.component.webservice.client.UserBean;
 import com.yonyou.entity.Persion;
 import com.yonyou.service.TestPersionService;
+import com.yonyou.service.activemq.MQService;
 
 @Controller
 @RequestMapping(value = "/test")
@@ -23,8 +24,32 @@ public class TestMybatis {
 	private ApplicationContext ac = null;
 	@Autowired
 	private TestPersionService testservice;
-
+	@Autowired
+	private MQService mqService;
+//	@Autowired
+//	private ActiveMQConsumerService activeMQConsumerService;
 	
+
+	/**
+	 * ≤‚ ‘mybatis 
+	 * @return
+	 */
+	@RequestMapping(value = "activemq", method = RequestMethod.GET)
+	@ResponseBody
+	public String activemq() {
+		mqService.sendMsg();
+		return "true";
+	}
+	
+	/**
+	 * ≤‚ ‘mybatis 
+	 * @return
+	 */
+	@RequestMapping(value = "consumermq", method = RequestMethod.GET)
+	@ResponseBody
+	public void consumermq() {
+		//activeMQConsumerService.getMsg();
+	}
 	/**
 	 * ≤‚ ‘mybatis 
 	 * @return
