@@ -1,4 +1,4 @@
-# SSM+quartz+websocket+webservice+shiro
+# SSM+quartz+websocket+webservice+shiro+activemq
 
 SSM:
 基于spring springMVC mybatis 搭建的项目示例
@@ -29,3 +29,7 @@ shiro : 拦截未登录的链接资源
 测试未登录地址：http://localhost:8080/SSM/success
 
 redis : 测试代码在测试模块中
+
+
+activemq: 消息队列测试 先启动activemq
+测试地址：http://localhost:8080/SSM/test/activemq
