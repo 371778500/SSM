@@ -17,9 +17,9 @@ public class ActiveMQServiceImpl implements IActiveMQService {
 	 * @param msg
 	 */
 	@Override
-	public void sendUserMsg(final String msg) {
+	public void sendUserMsg(String queueName, final String msg) {
 		jmsOperations.send(             //发送消息
-                "myQueue",           //指定目的地
+                queueName,//指定目的地
                 new MessageCreator() {
                     @Override
                     public Message createMessage(Session session) throws JMSException {

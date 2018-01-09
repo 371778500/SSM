@@ -5,6 +5,6 @@ public interface IActiveMQService {
 	 * ·¢ËÍÏûÏ¢
 	 * @param msg
 	 */
-	void sendUserMsg(String msg);
+	void sendUserMsg(String queueName,String msg);
 
 }

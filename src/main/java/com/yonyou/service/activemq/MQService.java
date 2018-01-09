@@ -12,7 +12,7 @@ public class MQService {
 	//消息发送
 	public void sendMsg(){
 		for (int i = 0; i < 500000; i++) { 
-			activeMQServiceImpl.sendUserMsg("这是发送的消息"+i);
+			activeMQServiceImpl.sendUserMsg("myQueue","这是发送的消息"+i);
 			try {
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
