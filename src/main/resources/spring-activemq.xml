@@ -13,7 +13,7 @@
 
 	<!-- 创建连接工厂  -->
 	<bean id="targetConnectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="tcp://localhost:61616"/>
+        <property name="brokerURL" value="tcp://10.15.0.50:61616"/>
 	</bean>
 	
 	<!-- 管理连接 类似于连接池 -->
