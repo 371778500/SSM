@@ -44,6 +44,51 @@
 	    <artifactId>activemq-all</artifactId>
 	    <version>5.11.1</version>
 	</dependency>
+	
+	
+	<!-- 如果 activemq-all 会产生冲突可使用下面的jar进行替换  -->
+	  	<!-- <dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jms</artifactId>
+		    <version>${spring.version}</version> 
+		</dependency>
+		<dependency>
+		    <groupId>commons-pool</groupId>
+		    <artifactId>commons-pool</artifactId>
+		    <version>1.6</version>
+		</dependency>
+       <dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>activemq-broker</artifactId>
+		    <version>5.14.4</version>
+		</dependency> 
+		<dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>activemq-spring</artifactId>
+		    <version>5.14.4</version>
+		    <exclusions>
+		      	<exclusion>
+		        	<groupId>org.slf4j</groupId>
+		        	<artifactId>slf4j-log4j12</artifactId>
+		     	</exclusion>
+		    </exclusions> 
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>activemq-client</artifactId>
+		    <version>5.14.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.geronimo.specs</groupId>
+		    <artifactId>geronimo-jms_1.1_spec</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		<dependency>
+		      <groupId>org.apache.geronimo.specs</groupId>
+		      <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
+		      <version>1.0.1</version>
+		</dependency> -->
+	
   
   	<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
     <dependency>
