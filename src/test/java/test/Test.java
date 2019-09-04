@@ -2,7 +2,6 @@ package test;
 
 public class Test {
 
-	@org.junit.Test
 	public void test1(){
 		String str=new String("sssss");
 		setString(str);
